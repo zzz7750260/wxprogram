@@ -30,5 +30,6 @@
 	}
 	else{
 		$response = $theActiveWx->reponseMsg();	
+		file_put_contents("response.txt",$response);
 		echo $response;
 	}
