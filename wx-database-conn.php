@@ -9,6 +9,7 @@ if($conn){
 	
 	if($conn_db){
 	//	echo "数据库连接成功";		
+		header("Content-type: text/html; charset=utf-8");
 		mysql_query("set names utf8");
 	}
 	else{

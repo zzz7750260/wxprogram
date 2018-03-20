@@ -1,4 +1,5 @@
 <?php 
+include("wx-database-conn.php");
 class wxIndexClass{
 		
 	function reponseMsg(){		
@@ -24,15 +25,15 @@ class wxIndexClass{
 		//	$postObj['EventKey']
 		//	$postObj['Ticket']
 		
-		file_put_contents("postObjwxts.txt",$postObj);
+		//file_put_contents("postObjwxts.txt",$postObj);
 		
 		$postStrArray = array($postObj->ToUserName,$postObj->FromUserName,$postObj->CreateTime,$postObj->MsgType,$postObj->Event);
 		
-		file_put_contents("postStrArray.txt",$postStrArray);
+		//file_put_contents("postStrArray.txt",$postStrArray);
 		
 		$postStrString = implode(" ",$postStrArray);
 
-		file_put_contents("postStrString.txt",$postStrString);
+		//file_put_contents("postStrString.txt",$postStrString);
 	
 	
 		if(strtolower( $postObj->MsgType ) == 'event'){
@@ -48,12 +49,16 @@ class wxIndexClass{
 				$template = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content></xml>";				
 				$info = sprintf($template,$toUser,$fromUser,$time,$msgType,$content);
 				//echo $info;
-				file_put_contents("info.txt",$info);			
+				//file_put_contents("info.txt",$info);			
 				return $info;
 			}
 		}
 		
 		if(strtolower( $postObj->MsgType) == 'text'){
+			//查看传入的词是否存在在服务器或者设置中
+			$getKeyWord = trim($postObj->Content);
+						
+			
 			if($postObj->Content == "服务器资讯"){
 				$theInfo = $this->get_reponse_msg('news');
 				return $theInfo;
@@ -75,7 +80,7 @@ class wxIndexClass{
 
 		
 		//将$postArr的内容写入wxts.xml的文件中作为调试
-		file_put_contents("postgetArrwxts.html",$postArr);
+		//file_put_contents("postgetArrwxts.html",$postArr);
 			
 		
 		//将传过来的xml转换成 SimpleXMLElement 对象。必须要用->来调用
@@ -100,9 +105,24 @@ class wxIndexClass{
 					$content = '我们美国服务器有配置一，配置二等多种配置,你可以点击<a href="http://www.hostspaces.net/usa/">更多</a>了解我们服务器的相关资源';
 					break;				
 				default:
-					$content = '没有相关的查询';
+					//$content = '没有相关的查询';
+					//到数据库中查询
+					$checkKey = trim($postObj->Content);
+					$keyWordCheckSql = "select * from wp_wx_key_word";									
+					$keyWordCheckSql_db = mysql_query($keyWordCheckSql);
+					
+					$keyWordCheckSql_db_num = mysql_num_rows($keyWordCheckSql_db);
+					
+					if($keyWordCheckSql_db_num){
+						while($keyWordCheckSql_db_array = mysql_fetch_assoc($keyWordCheckSql_db)){
+							$content = $keyWordCheckSql_db_array['word_ms'];
+						}						
+					}
+					else{
+						$content = '没有相关的查询';		
+					}
 			}
-			file_put_contents('content.txt',$content);
+			//file_put_contents('content.txt',$content);
 			$info = sprintf($template,$toUser,$fromUser,$time,$msgType,$content);
 				//echo $info;
 			file_put_contents("xxxinfo.txt",$info);			
@@ -137,20 +157,27 @@ class wxIndexClass{
 				),
 			);
 			
-			//获取图文的模板
-			$newTemplate .= "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><ArticleCount>".count($arr)."</ArticleCount><Articles>";
-						
-			//item的循环输出		
-			foreach($arr as $thekey => $value){
-				$newTemplate .="<item><Title><![CDATA[".$value['title']."]]></Title><Description><![CDATA[".$value['description']."]]></Description><PicUrl><![CDATA[".$value['picUrl']."]]></PicUrl><Url><![CDATA[".$value['url']."]]></Url></item>";
-			}
+		 	$getInfo = $this->theNewsBox($arr,$toUser,$fromUser,$time,$theMsgType);
+			return $getInfo;
 			
-			$newTemplate .= "</Articles></xml>";
-			
-			$info = sprintf($newTemplate,$toUser,$fromUser,$time,$theMsgType);
-			file_put_contents('dtwinfo.txt',$info);
-			
-			return $info;			
 		}				
-	}		
+	}
+	
+	//多图文内容封装,因为图文封装可能需要多次调用
+	function theNewsBox($arr,$toUser,$fromUser,$time,$theMsgType){
+		//获取图文的模板
+		$newTemplate .= "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><ArticleCount>".count($arr)."</ArticleCount><Articles>";
+					
+		//item的循环输出		
+		foreach($arr as $thekey => $value){
+			$newTemplate .="<item><Title><![CDATA[".$value['title']."]]></Title><Description><![CDATA[".$value['description']."]]></Description><PicUrl><![CDATA[".$value['picUrl']."]]></PicUrl><Url><![CDATA[".$value['url']."]]></Url></item>";
+		}
+		
+		$newTemplate .= "</Articles></xml>";
+		
+		$info = sprintf($newTemplate,$toUser,$fromUser,$time,$theMsgType);
+		file_put_contents('dtwinfo.txt',$info);
+		
+		return $info;		
+	}	
 }

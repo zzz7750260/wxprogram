@@ -432,9 +432,9 @@ function add_diy_menu() {
  
     add_menu_page( '微信公众号', '微信公众号', 'administrator', 'custompage', 'rainbow_my_function_menu', '', 100);
  
-    add_submenu_page('custompage', '子菜单1', '设置关键词回复', 'administrator', 'custompage', 'rainbow_my_function_menu1');
+    add_submenu_page('custompage', '设置关键词回复', '设置关键词回复', 'administrator', 'custompage', 'rainbow_my_function_menu1');
  
-    add_submenu_page('custompage', '子菜单2', '模式设置', 'administrator', 'your-admin-sub-menu2', 'my_function_submenu2');
+    add_submenu_page('custompage', '关键词回复列表', '关键词回复列表', 'administrator', 'your-admin-sub-menu2', 'my_function_submenu2');
 	add_submenu_page('custompage', '子菜单3', '首页slider', 'administrator', 'your-admin-sub-menu3', 'my_function_submenu3');
  
 }
@@ -457,7 +457,8 @@ function rainbow_my_function_menu1() {
 	';
 }
 function my_function_submenu2() { 
-    echo "<h2>模式设置</h2>";
+    echo "<h2>微信关键词列表</h2>";
+	include("../wx/wx-keyword-list.php");
 }
 function my_function_submenu3() { 
     echo "<h2>首页slider</h2>";
