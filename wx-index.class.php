@@ -55,14 +55,21 @@ class wxIndexClass{
 		}
 		
 		if(strtolower( $postObj->MsgType) == 'text'){
-			//查看传入的词是否存在在服务器或者设置中
+			//查看传入的词是否符合资讯查询词，如果在在服务器或者设置中,优先进入
 			$getKeyWord = trim($postObj->Content);
-						
+			$isFindSql = "select * from wp_terms where name = '$getKeyWord'";
+			$isFindSql_db = mysql_query($isFindSql);
+			$isFindSql_db_num = mysql_num_rows($isFindSql_db);
 			
-			if($postObj->Content == "服务器资讯"){
+			if($isFindSql_db_num){
 				$theInfo = $this->get_reponse_msg('news');
-				return $theInfo;
+				return $theInfo;			
 			}
+						
+			//if($postObj->Content == "服务器资讯"){
+			//	$theInfo = $this->get_reponse_msg('news');
+			//	return $theInfo;
+			//}
 			else{				
 				$theInfo = $this->get_reponse_msg('text');
 				return $theInfo;				
@@ -108,7 +115,7 @@ class wxIndexClass{
 					//$content = '没有相关的查询';
 					//到数据库中查询
 					$checkKey = trim($postObj->Content);
-					$keyWordCheckSql = "select * from wp_wx_key_word";									
+					$keyWordCheckSql = "select * from wp_wx_key_word where key_word = '$checkKey'";									
 					$keyWordCheckSql_db = mysql_query($keyWordCheckSql);
 					
 					$keyWordCheckSql_db_num = mysql_num_rows($keyWordCheckSql_db);
@@ -119,13 +126,40 @@ class wxIndexClass{
 						}						
 					}
 					else{
-						$content = '没有相关的查询';		
+						
+						$textArraySql = "select * from wp_posts where post_title like '%$checkKey%' and post_status = 'publish' limit 0,5";						
+						$textArraySql_db = mysql_query($textArraySql);
+						
+						$textArraySql_db_num = mysql_num_rows($textArraySql_db);
+						
+						if($textArraySql_db_num){
+							//$theMsgType需要变成多图文
+							$theMsgType = 'news';
+							
+							$getTextArray = array();
+							
+							$i = 0;
+							while($textArraySql_db_array = mysql_fetch_assoc($textArraySql_db)){
+								$getTextArray[$i]['title'] = $textArraySql_db_array['post_title'];
+								$getTextArray[$i]['description'] = $textArraySql_db_array['post_content'];
+								$getTextArray[$i]['picUrl'] = 'http://www.hostspaces.net/version/images/logo_a.gif';
+								$getTextArray[$i]['url'] = $textArraySql_db_array['guid'];
+								$i++;
+							}
+							$getInfo = $this->theNewsBox($getTextArray,$toUser,$fromUser,$time,$theMsgType);
+							return $getInfo;
+						
+						}
+						else{
+							$content = '没有相关的查询';							
+						}
+								
 					}
 			}
 			//file_put_contents('content.txt',$content);
 			$info = sprintf($template,$toUser,$fromUser,$time,$msgType,$content);
 				//echo $info;
-			file_put_contents("xxxinfo.txt",$info);			
+			file_put_contents("xxxinfo.txt",$info);
 			return $info;		
 		}
 		
@@ -157,7 +191,42 @@ class wxIndexClass{
 				),
 			);
 			
-		 	$getInfo = $this->theNewsBox($arr,$toUser,$fromUser,$time,$theMsgType);
+			
+			
+			//根据输入的字段返回相关的网络信息
+			$theNewsKeyWord = trim($postObj->Content);
+			
+			$getArrayNumSql = "select * from wp_terms where name = '$theNewsKeyWord'";
+			
+			$getArrayNumSql_db = mysql_query($getArrayNumSql);
+			
+			$getArrayNumSql_db_num = mysql_num_rows($getArrayNumSql_db);
+			
+			$getArrayNumSql_db_num_str = "获取到的数量为：".$getArrayNumSql_db_num;
+			
+			
+			file_put_contents("theNum.txt",$getArrayNumSql_db_num_str);
+			
+			
+			$xxArraySql = "select a.*, b.*, c.* from wp_term_relationships as a join wp_terms as b join wp_posts as c where a.term_taxonomy_id = b.term_id and c.id = a.object_id and b.name = '$theNewsKeyWord' limit 0,5";
+			
+			$xxArraySql_db = mysql_query($xxArraySql);			
+			$getXxArray = array();
+			
+			$i = 0;
+			
+			while($xxArraySql_db_array = mysql_fetch_assoc($xxArraySql_db)){
+				$getXxArray[$i]['title'] = $xxArraySql_db_array['post_title'];
+				$getXxArray[$i]['description'] = $xxArraySql_db_array['post_content'];
+				$getXxArray[$i]['picUrl'] = 'http://www.hostspaces.net/version/images/logo_a.gif';
+				$getXxArray[$i]['url'] = $xxArraySql_db_array['guid'];
+				$i++;
+			};
+			
+			$strXxArray =implode("",$xxArraySql_db_array); 
+			file_put_contents("arraycontent.txt",$strXxArray);
+			
+		 	$getInfo = $this->theNewsBox($getXxArray,$toUser,$fromUser,$time,$theMsgType);
 			return $getInfo;
 			
 		}				
