@@ -33,3 +33,6 @@
 		file_put_contents("response.txt",$response);
 		echo $response;
 	}
+	
+	//$theUrl = "http://tool.chinaz.com/";
+	$theActiveWx->getWxAccessTiken();
