@@ -254,7 +254,7 @@ class wxIndexClass{
 	
 	
 	//设置curl_http的请求方法
-	function http_curl($theUrl){
+	function http_curl($theUrl,$type='get',$res='json',$arr=''){
 		//初始化curl
 		$ch = curl_init();
 		$url = $theUrl;
@@ -264,44 +264,147 @@ class wxIndexClass{
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); 
+		
+		//当为post类型的时候
+		if($type='post'){
+			curl_setopt($ch, CURLOPT_POST, $url);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);			
+		}
+		
 		//采集
 		$output = curl_exec($ch);
-		
-		//关闭
-		curl_close($ch);
-		var_dump($output);
-	}
-	
-	function getWxAccessTiken(){
-		//获取微信的AppID
-		$appID = "wx14f88739efb836b1";
 
-		//获取微信的AppSecret
-		$appSecret = "518471bf295994da56ca601817769af5";
-		
-		$turl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appID."&secret=".$appSecret."";
-		
-		//初始化
-		$ch = curl_init();
-		
-		//设置参数
-		curl_setopt($ch, CURLOPT_URL, $turl);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 跳过证书检查  
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);  // 从证书中检查SSL加密算法是否存在  
-		//调用接口,得到返回值
-		$res = curl_exec($ch);	
-		//关闭curl
-		
+		//监测是否存在错别，必须放在curl_close之前监测
 		if(curl_errno($ch)){
 			var_dump(curl_errno($ch));		
-		}
+		}		
+	
+		//关闭
 		curl_close($ch);
-		//将返回的json转为数组
-		$arr = json_decode($res,true);
-		
-		print_r($arr);		
-		
+		if($res =='json'){
+			return json_decode($output,true);			
+		}
+		//var_dump($output);		
 	}
 	
+	function getWxAccessToken(){
+
+		//从数据库中取出token的过期时间
+		$getTokenTimeSql = "select * from wp_users";
+		
+		$getTokenTimeSql_db = mysql_query($getTokenTimeSql);
+		
+		$getTokenTimeSqlArray = array();
+		
+		
+		while($getTokenTimeSql_db_array = mysql_fetch_assoc($getTokenTimeSql_db)){
+			$getTokenTimeSqlArray = $getTokenTimeSql_db_array;
+		}
+		$nowTime = time();
+		$tokenEndTime = $getTokenTimeSqlArray['wx_token_timeEnd'];
+		if($tokenEndTime>$nowTime){
+			return $getTokenTimeSqlArray['wx_token'];
+		}
+		else{
+			//重新获取token
+			//获取微信的AppID
+			//$appID = "wx14f88739efb836b1";
+
+			//获取微信的AppSecret
+			//$appSecret = "518471bf295994da56ca601817769af5";
+			
+			//测试号的appID与appsecret
+			$appID = "wx5faec86adb79db26";
+			$appSecret = "17913645124aec3e59aefa3f41ba5a88";
+			
+			$turl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appID."&secret=".$appSecret."";
+			
+			//初始化
+			//$ch = curl_init();
+			
+			//设置参数
+			//curl_setopt($ch, CURLOPT_URL, $turl);
+			//curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+			//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 跳过证书检查  
+			//curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);  // 从证书中检查SSL加密算法是否存在  
+			//调用接口,得到返回值
+			//$res = curl_exec($ch);	
+			//关闭curl
+			
+			//if(curl_errno($ch)){
+			//	var_dump(curl_errno($ch));		
+			//}
+			//curl_close($ch);
+			//将返回的json转为数组
+			//$arr = json_decode($res,true);
+			
+			//print_r($arr);	
+			
+			
+			$theinfo = $this->http_curl($turl);
+			var_dump($theinfo);
+			
+			$theToken = $theinfo['access_token'];
+			$theTokenTime = time();//获取token的时间
+			$theTokenTimeEnd = time()+7000;
+				
+			//将token存入数据库
+			
+			$tokenSql = "update wp_users set wx_token = '$theToken', wx_token_time = '$theTokenTime', wx_token_timeEnd = '$theTokenTimeEnd' where user_login = 'admin'";
+			
+			$tokenSql_db = mysql_query($tokenSql);
+			
+			return $theToken;
+			
+		}			
+	}
+	
+	//创建自定义菜单
+	function definedItem(){
+		$getAccessToken = $this->getWxAccessToken();
+		
+		print_r($getAccessToken);
+		
+		//对自定义菜单进行数组化
+		$menuArray = array(
+			'button' => array(
+				array(
+					"type"=>"click",
+					"name"=>urlencode('今日歌曲'),
+					"key"=>"item1",
+					
+				),
+				array(
+					'name'=>urlencode('最新推荐'),
+					'sub_button'=>array(
+						array(
+							'name'=>urlencode('歌曲'),
+							'type'=>'click',
+							'key'=>'songs',
+						),
+						array(
+							'name'=>urlencode('电影'),
+							'type'=>'view',
+							'url'=>'http://www.baidu.com',
+						),					
+					),				
+				),
+				array(
+					'name'=>urlencode('菜单三'),
+					'type'=>'view',
+					'url'=>'http://www.qq.com',			
+				),
+			),			
+		);
+		
+		$menuJson = urldecode(json_encode($menuArray));
+		
+		var_dump($menuJson);
+		
+		
+		$turl = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.$getAccessToken.'';
+		$res = $this->http_curl($turl,$type='get',$res='json',$menuJson);
+		var_dump($res);
+		
+	}
 }

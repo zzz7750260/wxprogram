@@ -35,4 +35,4 @@
 	}
 	
 	//$theUrl = "http://tool.chinaz.com/";
-	$theActiveWx->getWxAccessTiken();
+	//$theActiveWx->definedItem();
