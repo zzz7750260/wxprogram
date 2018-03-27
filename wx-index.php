@@ -34,5 +34,15 @@
 		echo $response;
 	}
 	
+	//根据参数来调用不同的功能
+	$theUrl = $_GET['turl'];
+	
+	$theActiveWx->returnFun($theUrl);
+	
+	
 	//$theUrl = "http://tool.chinaz.com/";
 	//$theActiveWx->definedItem();
+	//$theActiveWx->csToken();
+	//$theActiveWx->getOpenId();
+	
+	//phpinfo();

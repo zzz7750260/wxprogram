@@ -1,0 +1,371 @@
+[Sun Mar 25 06:40:11 2018] [error] [client 111.10.134.234] File does not exist: /var/www/html/wordpress/favicon.ico, referer: http://www.speedcloud.net/
+[Sun Mar 25 08:59:16 2018] [error] [client 220.181.108.122] File does not exist: /var/www/html/wordpress/uploads
+[Sun Mar 25 09:55:18 2018] [error] [client 115.231.222.210] File does not exist: /var/www/html/wordpress/manager
+[Sun Mar 25 10:47:43 2018] [error] [client 216.244.66.226] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 11:55:44 2018] [error] [client 216.244.66.245] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 12:24:43 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 12:24:43 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/sitemap.xml
+[Sun Mar 25 12:24:44 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/.well-known
+[Sun Mar 25 12:24:45 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/favicon.ico
+[Sun Mar 25 12:24:58 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 12:24:58 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/sitemap.xml
+[Sun Mar 25 12:24:58 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/.well-known
+[Sun Mar 25 12:25:00 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/favicon.ico
+[Sun Mar 25 12:25:13 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 12:25:14 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/sitemap.xml
+[Sun Mar 25 12:25:14 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/.well-known
+[Sun Mar 25 12:25:17 2018] [error] [client 125.212.217.215] File does not exist: /var/www/html/wordpress/favicon.ico
+[Sun Mar 25 17:43:59 2018] [error] [client 207.46.13.203] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 17:44:16 2018] [error] [client 207.46.13.203] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 17:44:57 2018] [error] [client 157.55.39.226] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 20:13:09 2018] [error] [client 123.125.67.226] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 20:36:37 2018] [error] [client 216.244.66.226] File does not exist: /var/www/html/wordpress/robots.txt
+[Sun Mar 25 22:34:14 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpmyadmin
+[Sun Mar 25 22:34:14 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpMyAdmin
+[Sun Mar 25 22:34:16 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/pma
+[Sun Mar 25 22:34:16 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/PMA
+[Sun Mar 25 22:34:16 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/PMA2
+[Sun Mar 25 22:34:17 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/pmamy
+[Sun Mar 25 22:34:17 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/pmamy2
+[Sun Mar 25 22:34:17 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/mysql
+[Sun Mar 25 22:34:18 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/admin
+[Sun Mar 25 22:34:18 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/db
+[Sun Mar 25 22:34:18 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/dbadmin
+[Sun Mar 25 22:34:20 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/admin
+[Sun Mar 25 22:34:20 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/admin
+[Sun Mar 25 22:34:20 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/admin
+[Sun Mar 25 22:34:21 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/admin
+[Sun Mar 25 22:34:21 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/admin
+[Sun Mar 25 22:34:21 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/admin
+[Sun Mar 25 22:34:22 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/admin
+[Sun Mar 25 22:34:22 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/mysqladmin
+[Sun Mar 25 22:34:22 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/mysql-admin
+[Sun Mar 25 22:34:24 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpmyadmin0
+[Sun Mar 25 22:34:24 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpmyadmin1
+[Sun Mar 25 22:34:24 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpmyadmin2
+[Sun Mar 25 22:34:25 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/myadmin
+[Sun Mar 25 22:34:25 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/myadmin2
+[Sun Mar 25 22:34:25 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/xampp
+[Sun Mar 25 22:34:26 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpMyadmin_bak
+[Sun Mar 25 22:34:26 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/www
+[Sun Mar 25 22:34:26 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/tools
+[Sun Mar 25 22:34:26 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpmyadmin-old
+[Sun Mar 25 22:34:28 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/pma-old
+[Sun Mar 25 22:34:28 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/claroline
+[Sun Mar 25 22:34:28 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/typo3
+[Sun Mar 25 22:34:29 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpma
+[Sun Mar 25 22:34:29 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpmyadmin
+[Sun Mar 25 22:34:29 2018] [error] [client 111.230.229.226] File does not exist: /var/www/html/wordpress/phpMyAdmin
+[Sun Mar 25 22:35:09 2018] [error] [client 62.255.175.74] File does not exist: /var/www/html/wordpress/CFIDE
+[Mon Mar 26 01:15:05 2018] [error] [client 216.244.66.245] File does not exist: /var/www/html/wordpress/robots.txt
+[Mon Mar 26 03:55:53 2018] [error] [client 5.188.9.80] File does not exist: /var/www/html/wordpress/robots.txt
+[Mon Mar 26 04:00:57 2018] [error] [client 5.188.9.80] File does not exist: /var/www/html/wordpress/robots.txt
+[Mon Mar 26 05:42:08 2018] [error] [client 125.82.187.207] File does not exist: /var/www/html/wordpress/favicon.ico, referer: http://www.speedcloud.net/
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx-index.php on line 7
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx-index.php on line 8
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx-index.php on line 10
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx-index.php on line 11
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx-index.class.php on line 7
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 38
+[Mon Mar 26 05:42:14 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 56
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx-index.php on line 7
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx-index.php on line 8
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx-index.php on line 10
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx-index.php on line 11
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx-index.class.php on line 7
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 38
+[Mon Mar 26 05:54:22 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 56
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx-index.php on line 7
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx-index.php on line 8
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx-index.php on line 10
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx-index.php on line 11
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx-index.class.php on line 7
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 38
+[Mon Mar 26 05:54:27 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 56
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx-index.php on line 7
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx-index.php on line 8
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx-index.php on line 10
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx-index.php on line 11
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx-index.class.php on line 7
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 29
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 38
+[Mon Mar 26 05:54:52 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx-index.class.php on line 56
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 05:55:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 05:55:11 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 06:22:35 2018] [error] [client 5.188.9.80] File does not exist: /var/www/html/wordpress/RPC2
+[Mon Mar 26 06:31:25 2018] [error] [client 5.188.9.80] File does not exist: /var/www/html/wordpress/RPC2
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 06:48:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 06:48:56 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 06:51:13 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 07:31:40 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 07:33:01 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 07:49:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 07:51:32 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 07:58:03 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425
+[Mon Mar 26 08:02:21 2018] [error] [client 216.244.66.226] File does not exist: /var/www/html/wordpress/robots.txt
+[Mon Mar 26 08:26:51 2018] [error] [client 216.244.66.245] File does not exist: /var/www/html/wordpress/robots.txt
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 08:33:06 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425
+[Mon Mar 26 09:52:03 2018] [error] [client 125.82.187.207] File does not exist: /var/www/html/wordpress/favicon.ico, referer: http://23.234.10.120/
+[Mon Mar 26 09:53:30 2018] [error] [client 125.82.187.207] File does not exist: /var/www/html/wordpress/jpan
+[Mon Mar 26 09:53:54 2018] [error] [client 125.82.187.207] File does not exist: /var/www/html/wordpress/japan
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:02:07 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425, referer: http://23.234.10.120/wx/
+[Mon Mar 26 10:03:16 2018] [error] [client 218.93.208.171] File does not exist: /var/www/html/wordpress/pmd
+[Mon Mar 26 10:03:18 2018] [error] [client 218.93.208.171] File does not exist: /var/www/html/wordpress/pmd
+[Mon Mar 26 10:03:21 2018] [error] [client 218.93.208.171] File does not exist: /var/www/html/wordpress/pmd
+[Mon Mar 26 10:03:25 2018] [error] [client 218.93.208.171] File does not exist: /var/www/html/wordpress/pmd
+[Mon Mar 26 10:03:29 2018] [error] [client 218.93.208.171] File does not exist: /var/www/html/wordpress/pmd
+[Mon Mar 26 10:22:01 2018] [error] [client 106.14.195.46] File does not exist: /var/www/html/wordpress/phpMyAdmin, referer: http://23.234.10.120/phpMyAdmin
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:26:57 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:27:17 2018] [error] [client 125.82.187.207] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /var/www/html/wordpress/wx/wx-index.php on line 41, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:04 2018] [error] [client 114.95.227.11] File does not exist: /var/www/html/wordpress/favicon.ico, referer: http://23.234.10.120/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:36 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425, referer: http://23.234.10.120/wx/
+[Mon Mar 26 11:38:56 2018] [error] [client 125.82.187.207] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /var/www/html/wordpress/wx/wx-index.php on line 41, referer: http://23.234.10.120/wx/
+[Mon Mar 26 12:09:04 2018] [error] [client 180.175.18.219] File does not exist: /var/www/html/wordpress/favicon.ico, referer: http://www.speedcloud.net/?cat=6
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 12:25:12 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 12:25:18 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425
+[Mon Mar 26 12:25:32 2018] [error] [client 125.82.187.207] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /var/www/html/wordpress/wx/wx-index.php on line 41
+[Mon Mar 26 12:25:38 2018] [error] [client 125.82.187.207] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /var/www/html/wordpress/wx/wx-index.php on line 41
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 12:29:46 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425
+[Mon Mar 26 12:30:06 2018] [error] [client 125.82.187.207] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /var/www/html/wordpress/wx/wx-index.php on line 41
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 12:36:28 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425
+[Mon Mar 26 12:36:48 2018] [error] [client 125.82.187.207] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /var/www/html/wordpress/wx/wx-index.php on line 41
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: timestamp in /var/www/html/wordpress/wx/wx-index.php on line 7
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: nonce in /var/www/html/wordpress/wx/wx-index.php on line 8
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: signature in /var/www/html/wordpress/wx/wx-index.php on line 10
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: echostr in /var/www/html/wordpress/wx/wx-index.php on line 11
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined index: HTTP_RAW_POST_DATA in /var/www/html/wordpress/wx/wx-index.class.php on line 8
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 30
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 39
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Trying to get property of non-object in /var/www/html/wordpress/wx/wx-index.class.php on line 57
+[Mon Mar 26 12:37:24 2018] [error] [client 125.82.187.207] PHP Notice:  Undefined variable: arr in /var/www/html/wordpress/wx/wx-index.class.php on line 425
+[Mon Mar 26 12:37:44 2018] [error] [client 125.82.187.207] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /var/www/html/wordpress/wx/wx-index.php on line 41

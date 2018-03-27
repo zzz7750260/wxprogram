@@ -349,10 +349,16 @@ class wxIndexClass{
 			$theTokenTimeEnd = time()+7000;
 				
 			//将token存入数据库
+			 
 			
-			$tokenSql = "update wp_users set wx_token = '$theToken', wx_token_time = '$theTokenTime', wx_token_timeEnd = '$theTokenTimeEnd' where user_login = 'admin'";
+			$tokenSql = "update wp_users set wx_token = '$theToken', wx_token_time = '$theTokenTime', wx_token_timeEnd = '$theTokenTimeEnd' where user_login = 'admin' or user_login = 'chenxx'";
 			
 			$tokenSql_db = mysql_query($tokenSql);
+			
+			if($tokenSql_db){
+				echo "================token插入成功====================";
+				
+			}
 			
 			return $theToken;
 			
@@ -407,4 +413,93 @@ class wxIndexClass{
 		var_dump($res);
 		
 	}
+	
+	
+	//function csToken(){
+	//	$ch = curl_init();
+		//$url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx5faec86adb79db26&secret=17913645124aec3e59aefa3f41ba5a88";
+		
+	//	$url = "http://tool.chinaz.com/";
+		
+		//设置curl的参数
+	//	curl_setopt($ch, CURLOPT_URL, $url);
+	//	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	//	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+	//	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); 
+		
+		//当为post类型的时候
+	//	if($type='post'){
+	//		curl_setopt($ch, CURLOPT_POST, $url);
+	//		curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);			
+	//	}
+		
+		//采集
+	//	$output = curl_exec($ch);
+	//	var_dump($output);
+		
+	//}
+
+	
+	//获取微信用户列表
+	function getOpenId(){
+		//获取token
+		$theToken = $this->getWxAccessToken();
+
+		$theUrl = "https://api.weixin.qq.com/cgi-bin/user/get?access_token=".$theToken."&next_openid=";
+		
+		$res = $this->http_curl($theUrl,'get','json');
+		
+		echo "<br/>";
+		//print_r($res);		
+		return $res;
+	}
+	
+	
+	//根据openID进行群发
+	function sendMsAll(){
+		//1.获取token
+		$theToken = $this->getWxAccessToken();
+		
+		$theOpenIDArray = $this->getOpenId();
+		
+		//print_r($theOpenIDArray);
+		
+		$theUrl = "https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token=".$theToken;
+		
+		//组装post发送的数据
+		$postArray = array(
+			"touser"=>$theOpenIDArray['data']['openid'],
+			"msgtype"=>"text",
+			"text"=>array(
+				"content"=>urlencode('这个是群发信息'),
+			)
+		);
+		
+		
+		//将数组转换为json并提交
+		//$postJson = urldecode(json_encode($$postArray));
+		
+		$postJson = json_encode($postArray);
+		print_r($postJson);
+		//var_dump($postJson);
+		
+		//2.组装数据
+		//3.将数组转换为json并提交
+		//4.返回相关数据
+		
+		
+	}
+	
+	function returnFun($turl){
+		if($turl =="definedItem"){
+			$this->definedItem();			
+		}
+		if($turl =="getOpenId"){
+			$this->getOpenId();		
+		}
+		if($turl =="sendMsAll"){
+			$this->sendMsAll();			
+		}
+	}
+	
 }
