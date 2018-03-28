@@ -456,7 +456,7 @@ class wxIndexClass{
 	
 	
 	//根据openID进行群发
-	function sendMsAll(){
+	function sendMsAll($isTest = "true"){
 		//1.获取token
 		$theToken = $this->getWxAccessToken();
 		
@@ -464,31 +464,160 @@ class wxIndexClass{
 		
 		//print_r($theOpenIDArray);
 		
-		$theUrl = "https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token=".$theToken;
+		if($isTest == "true"){
+			$turl = "https://api.weixin.qq.com/cgi-bin/message/mass/preview?access_token=".$theToken;
+			$postArray = array(
+				//"touser"=>$theOpenIDArray['data']['openid'],
+				"touser"=>"oLWCs0cYXR3JpvPifMNcqUJBoXWI",
+				"msgtype"=>"text",
+				"text"=>array(
+					"content"=>urlencode('这个是测试群发信息'),
+					//"content"=>'这个是群发信息',
+				)
+			);						
+		}
+		else{			
+			$turl = "https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token=".$theToken;
+			$postArray = array(
+				"touser"=>$theOpenIDArray['data']['openid'],
+				//"touser"=>"oLWCs0cYXR3JpvPifMNcqUJBoXWI",
+				"msgtype"=>"text",
+				"text"=>array(
+					"content"=>urlencode('这个是群发信息'),
+					//"content"=>'这个是群发信息',
+				)
+			);						
+		}
+		
+		
+		//$theUrl = "https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token=".$theToken;
 		
 		//组装post发送的数据
-		$postArray = array(
-			"touser"=>$theOpenIDArray['data']['openid'],
-			"msgtype"=>"text",
-			"text"=>array(
-				"content"=>urlencode('这个是群发信息'),
-			)
-		);
 		
 		
 		//将数组转换为json并提交
-		//$postJson = urldecode(json_encode($$postArray));
+		$postJson = urldecode(json_encode($postArray));
 		
-		$postJson = json_encode($postArray);
+		//$postJson = json_encode($postArray);
 		print_r($postJson);
 		//var_dump($postJson);
 		
+		//设置调用微信群发预览接口
+		
+		//对数据进行curl的post请求
+		$res = $this->http_curl($turl,'post','json',$postJson);
+				
+		echo "<br/><hr/>";
+
+		print_r($res);	
+		
+		
 		//2.组装数据
 		//3.将数组转换为json并提交
-		//4.返回相关数据
+		//4.返回相关数据				
+	}
+	
+	
+	//设置调用测试模板
+	function setMb(){
+		//获取微信的access_token
+		$theToken = $this->getWxAccessToken();
 		
+		//获取关注的微信openId
+		
+		//组装array数据
+		$MbArray = array(
+			'touser'=>'oLWCs0cYXR3JpvPifMNcqUJBoXWI',
+			'template_id'=>'-RoL0WNPjeFS8N7pKndFisrPl-YwP3qoBXbEqWccCOE',
+			'url'=>'http://www.hostspaces.net',
+			'data'=>array(
+				'name'=>array(
+					'value'=>'hello',
+					'color'=>'#ff0000'
+				),
+				'money'=>array(
+					'value'=>10,
+					'color'=>'#ff0000'
+				),
+				'date'=>array(
+					'value'=>date('Y-m-d H:i:s'),
+					'color'=>'#ff0000'
+				)
+			),
+			
+		);
+		
+		//将array转换为json
+		$MbJson = json_encode($MbArray);
+
+		//输出
+		//print_r($MbJson);
+		
+		//提交模板信息的微信接口
+		$turl = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".$theToken;
+		
+		//对封装的json数据发送curl的post请求
+		$res = $this->http_curl($turl,'post','json',$MbJson);
+		print_r($res);
 		
 	}
+	
+	
+	//获取页面授权
+	function getWebCode(){
+		//获取微信的AppID
+		//$appID = "wx14f88739efb836b1";
+
+		//获取微信的AppSecret
+		//$appSecret = "518471bf295994da56ca601817769af5";
+		
+		//测试号的appID与appsecret
+		$appID = "wx5faec86adb79db26";
+		$appSecret = "17913645124aec3e59aefa3f41ba5a88";	
+		
+		//获取access_token
+		$theToken = $this->getWxAccessToken();
+		
+		//这个链接主要是跳转获取到微信网页授权的access_token的链接
+		$getUrl = "http://23.234.10.120/wx/wx-index.php?turl=getWebToken";
+		
+		//根据要求对$getUrl进行urlEncode转码
+		$enUrl = urlencode($getUrl);
+		
+		//获取类型选择
+		$getType = "snsapi_base";
+		
+		//获取微信code的接口
+		$codeUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$appID."&redirect_uri=".$enUrl."&response_type=code&scope=".$getType."&state=123#wechat_redirect";
+		
+		//echo $enUrl;
+		//跳转到接口getWebToken的页面
+		header('location:'.$codeUrl);
+	}
+	
+	//获取微信access_token的方法
+	function getWebToken(){
+		//获取微信的AppID
+		//$appID = "wx14f88739efb836b1";
+
+		//获取微信的AppSecret
+		//$appSecret = "518471bf295994da56ca601817769af5";
+		
+		//测试号的appID与appsecret
+		$appID = "wx5faec86adb79db26";
+		$appSecret = "17913645124aec3e59aefa3f41ba5a88";	
+		
+		//获取微信网页授权的access_token链接
+		$theCode = $_GET['code'];
+		echo "code:".$theCode;
+		print_r($theCode);
+		$theUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$appID."&secret=".$appSecret."&code=".$theCode."&grant_type=authorization_code";	
+		
+		//利用curl对网页授权的access_token进行获取
+		$res = $this->http_curl($theUrl);
+		print_r($res);
+	}
+	
 	
 	function returnFun($turl){
 		if($turl =="definedItem"){
@@ -498,7 +627,16 @@ class wxIndexClass{
 			$this->getOpenId();		
 		}
 		if($turl =="sendMsAll"){
-			$this->sendMsAll();			
+			$this->sendMsAll("false");			
+		}
+		if($turl == "setMb"){
+			$this->setMb();
+		}
+		if($turl == "getWebCode"){
+			$this->getWebCode();			
+		}
+		if($turl == "getWebToken"){
+			$this->getWebToken();			
 		}
 	}
 	
