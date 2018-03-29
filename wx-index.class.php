@@ -564,7 +564,7 @@ class wxIndexClass{
 	
 	
 	//获取页面授权
-	function getWebCode(){
+	function getUserWebCode(){
 		//获取微信的AppID
 		//$appID = "wx14f88739efb836b1";
 
@@ -587,16 +587,18 @@ class wxIndexClass{
 		//获取类型选择
 		$getType = "snsapi_base";
 		
+		
+		//echo $enUrl."<br/><hr/>";
 		//获取微信code的接口
 		$codeUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$appID."&redirect_uri=".$enUrl."&response_type=code&scope=".$getType."&state=123#wechat_redirect";
 		
-		//echo $enUrl;
+		//echo $codeUrl;
 		//跳转到接口getWebToken的页面
 		header('location:'.$codeUrl);
 	}
 	
 	//获取微信access_token的方法
-	function getWebToken(){
+	function getUserWebToken(){
 		//获取微信的AppID
 		//$appID = "wx14f88739efb836b1";
 
@@ -616,8 +618,96 @@ class wxIndexClass{
 		//利用curl对网页授权的access_token进行获取
 		$res = $this->http_curl($theUrl);
 		print_r($res);
+		return $res;
 	}
 	
+	//获取微信详细用户信息的code
+	function getUserDetailCode(){
+		//获取微信的AppID
+		//$appID = "wx14f88739efb836b1";
+
+		//获取微信的AppSecret
+		//$appSecret = "518471bf295994da56ca601817769af5";
+		
+		//测试号的appID与appsecret
+		$appID = "wx5faec86adb79db26";
+		$appSecret = "17913645124aec3e59aefa3f41ba5a88";			
+		
+		//跳转获取网页授权的access_token的链接设置
+		$getUrl = "http://23.234.10.120/wx/wx-index.php?turl=getUserDetailToken";
+		
+		//根据微信公众号的请求对url进行urlencode的扫码
+		$enUrl = urlencode($getUrl);
+		
+		//设置snsapi的请求类型
+		
+		$snType = "snsapi_userinfo";
+		
+		//获取微信网页授权的code接口
+		$codeUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$appID."&redirect_uri=".$enUrl."&response_type=code&scope=".$snType."&state=123#wechat_redirect";
+		
+		//设置页面跳转到获取微信页面授权的token中
+		header('location:'.$codeUrl);
+		exit;
+	}
+	
+	function getUserDetailToken(){
+		$theCode = $_GET['code'];
+		//获取微信的AppID
+		//$appID = "wx14f88739efb836b1";
+
+		//获取微信的AppSecret
+		//$appSecret = "518471bf295994da56ca601817769af5";
+		
+		//测试号的appID与appsecret
+		$appID = "wx5faec86adb79db26";
+		$appSecret = "17913645124aec3e59aefa3f41ba5a88";	
+		
+		//$_SESSION['CS']= "这个是测试的session";
+		//echo $_SESSION['CS'];
+
+		//由于code会存在一定的时间，因而在多次请求会导致出现40163的重复请求错误，因而使用session来判断是否有必要进行请求
+		echo "是否存在code：".$_SESSION['code'];
+		if(!$_SESSION['code'] || $_SESSION['code'] !=$theCode){
+			$_SESSION['code'] = $theCode;
+			echo "这个是内部code：".$_SESSION['code'];
+			
+			//设置微信网页授权获取token
+			$tokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$appID."&secret=".$appSecret."&code=".$theCode."&grant_type=authorization_code";
+			
+			//通过curl获取微信用户的access_token 
+			$res = $this->http_curl($tokenUrl);			
+			//输出结果
+			
+			print_r($res);
+			$_SESSION['token'] = $res['access_token'];
+			$_SESSION['timeEnd'] = time()+7000;
+			$_SESSION['refreshToken'] = $res['refresh_token'];
+			$_SESSION['openId'] = $res['openid'];
+			
+			$theToken = $_SESSION['token'];
+			$openId = $_SESSION['openId'];
+			echo "===============================";
+			
+		}
+		else{
+			$theToken = $_SESSION['token'];
+			$openId = $_SESSION['openId'];
+			echo "这个是token".$theToken;		
+			echo "aaaaaaaaaaaaaaaaaaaaaaaaa";
+		}
+		
+		
+		
+		
+	}
+	
+	
+	//function refreshToken(){
+		//获取返回的网页授权token
+	//	$theWebTokenArray = $this->getWebToken();
+		
+	//}
 	
 	function returnFun($turl){
 		if($turl =="definedItem"){
@@ -632,11 +722,17 @@ class wxIndexClass{
 		if($turl == "setMb"){
 			$this->setMb();
 		}
-		if($turl == "getWebCode"){
-			$this->getWebCode();			
+		if($turl == "getUserWebCode"){
+			$this->getUserWebCode();			
 		}
-		if($turl == "getWebToken"){
-			$this->getWebToken();			
+		if($turl == "getUserWebToken"){
+			$this->getUserWebToken();			
+		}
+		if($turl == "getUserDetailCode"){
+			$this->getUserDetailCode();			
+		}
+		if($turl == "getUserDetailToken"){		
+			$this->getUserDetailToken();
 		}
 	}
 	
