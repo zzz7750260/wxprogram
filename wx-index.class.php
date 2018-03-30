@@ -376,20 +376,20 @@ class wxIndexClass{
 			'button' => array(
 				array(
 					"type"=>"click",
-					"name"=>urlencode('今日歌曲'),
+					"name"=>urlencode('服务器信息'),
 					"key"=>"item1",
 					
 				),
 				array(
-					'name'=>urlencode('最新推荐'),
+					'name'=>urlencode('公司资讯'),
 					'sub_button'=>array(
 						array(
-							'name'=>urlencode('歌曲'),
+							'name'=>urlencode('公司新闻'),
 							'type'=>'click',
 							'key'=>'songs',
 						),
 						array(
-							'name'=>urlencode('电影'),
+							'name'=>urlencode('公司活动'),
 							'type'=>'view',
 							'url'=>'http://www.baidu.com',
 						),					
@@ -579,7 +579,7 @@ class wxIndexClass{
 		$theToken = $this->getWxAccessToken();
 		
 		//这个链接主要是跳转获取到微信网页授权的access_token的链接
-		$getUrl = "http://23.234.10.120/wx/wx-index.php?turl=getWebToken";
+		$getUrl = "http://23.234.10.120/wx/wx-index.php?turl=getUserWebToken";
 		
 		//根据要求对$getUrl进行urlEncode转码
 		$enUrl = urlencode($getUrl);
@@ -664,43 +664,73 @@ class wxIndexClass{
 		$appSecret = "17913645124aec3e59aefa3f41ba5a88";	
 		
 		//$_SESSION['CS']= "这个是测试的session";
-		//echo $_SESSION['CS'];
-
-		//由于code会存在一定的时间，因而在多次请求会导致出现40163的重复请求错误，因而使用session来判断是否有必要进行请求
-		echo "是否存在code：".$_SESSION['code'];
-		if(!$_SESSION['code'] || $_SESSION['code'] !=$theCode){
-			$_SESSION['code'] = $theCode;
-			echo "这个是内部code：".$_SESSION['code'];
-			
+		
+		
+				
+		//由于code会存在一定的时间，因而在多次请求会导致出现40163的重复请求错误，因而需要将数据存入数据库来判断是否有必要进行请求
+		
+		$isCodeSql  = "select * from wp_wx_web_token where wx_code = '$theCode'";
+		$isCodeSql_db = mysql_query($isCodeSql);
+		$isCodeSql_db_num = mysql_num_rows($isCodeSql_db);
+		$isCodeSqlArray = array();
+		if($isCodeSql_db_num){
+			while($isCodeSql_db_array = mysql_fetch_assoc($isCodeSql_db)){
+				$isCodeSqlArray[] = $isCodeSql_db_array;				
+			}
+			print_r($isCodeSqlArray);
+		}
+		else{
 			//设置微信网页授权获取token
 			$tokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$appID."&secret=".$appSecret."&code=".$theCode."&grant_type=authorization_code";
 			
 			//通过curl获取微信用户的access_token 
-			$res = $this->http_curl($tokenUrl);			
+			$res = $this->http_curl($tokenUrl,"get");	
+			echo "<script>alert (".$res.")</script>";
+			
 			//输出结果
 			
 			print_r($res);
-			$_SESSION['token'] = $res['access_token'];
-			$_SESSION['timeEnd'] = time()+7000;
-			$_SESSION['refreshToken'] = $res['refresh_token'];
-			$_SESSION['openId'] = $res['openid'];
 			
-			$theToken = $_SESSION['token'];
-			$openId = $_SESSION['openId'];
-			echo "===============================";
+			$theOpenid = $res['openid'];
+			$theToken = $res['access_token'];
+			$theRefresh = $res['refresh_token'];
+			$theTimeEnd = time()+7000;
+			$updateCode = $_GET['code'];			
 			
+			echo "<script>alert (".$theToken.")</script>";
+			echo "<script>alert (".$updateCode.")</script>";
+			
+			//监测是否存在openid，如果存在的时候，对数据库进行更改
+			$isTokenSql = "select * from wp_wx_web_token where wx_openid = '$theOpenid'";			
+			$isTokenSql_db = mysql_query($isTokenSql);			
+			$isTokenSql_db_num = mysql_num_rows($isTokenSql_db);
+			
+			$theTokenArray = array();
+			
+			//如果openId 存在的时候
+			if($isTokenSql_db_num){
+				$updataSql = "update wp_wx_web_token set wx_token = '$theToken', wx_refresh_token = '$theRefresh', wx_time_end = '$theTimeEnd', wx_code = '$updateCode'";
+				
+				$updataSql_db = mysql_query($updataSql);
+				
+				
+				while($isTokenSql_db_array = mysql_fetch_array($isTokenSql_db)){
+					$theTokenArray[] = $isTokenSql_db_array	;				
+				}			
+				print_r(theTokenArray);
+			}
+				
+			//如果openId不存在的时候
+			else{
+				$insertSql = "insert into table (wx_token,wx_openid,wx_refresh_token,wx_time_end,wx_sope,wx_code) values ('$theToken','$theOpenid','$theRefresh','$theTimeEnd','','$updateCode')";	
+				
+				$insertSql_db = mysql_query($insertSql);
+			}						
 		}
-		else{
-			$theToken = $_SESSION['token'];
-			$openId = $_SESSION['openId'];
-			echo "这个是token".$theToken;		
-			echo "aaaaaaaaaaaaaaaaaaaaaaaaa";
-		}
-		
-		
-		
-		
+						
 	}
+	
+	
 	
 	
 	//function refreshToken(){
