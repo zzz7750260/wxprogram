@@ -651,7 +651,7 @@ class wxIndexClass{
 		exit;
 	}
 	
-	function getUserDetailToken(){
+	function getUserDetailToken2(){
 		$theCode = $_GET['code'];
 		//获取微信的AppID
 		//$appID = "wx14f88739efb836b1";
@@ -728,6 +728,105 @@ class wxIndexClass{
 			}						
 		}
 						
+	}
+	
+	//针对获取用户详细信息2,这个主要为测试
+	function getUserDetailToken(){
+		$theCode = $_GET['code'];
+		//获取微信的AppID
+		//$appID = "wx14f88739efb836b1";
+
+		//获取微信的AppSecret
+		//$appSecret = "518471bf295994da56ca601817769af5";
+		
+		//测试号的appID与appsecret
+		$appID = "wx5faec86adb79db26";
+		$appSecret = "17913645124aec3e59aefa3f41ba5a88";
+
+		//获取token的微信接口
+		$turl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$appID."&secret=".$appSecret."&code=".$theCode."&grant_type=authorization_code";
+		
+		//据说绑定的网站没备案，因而测试号可能会出现两次，因而第一次将code存储，第二次再进行请求
+		$theCodeSql = "select * from wx_get_code where code_value = '$theCode'";
+		$theCodeSql_db = mysql_query($theCodeSql);
+		$theCodeNum = mysql_num_rows($theCodeSql_db);
+		echo "数据库中是否存在code".$theCodeNum."<br>";
+		
+		//当不存在的时候将code存入数据库
+		if(!$theCode){
+			echo "code 不存在";
+			return false;
+			
+		}
+		else{
+			if(!$theCodeNum){
+				$addCodeSql = "insert into wx_get_code (code_value) values ('$theCode')";
+				$addCodeSql_db = mysql_query($addCodeSql);
+				echo "<script>alert('成功插入数据');</script>";
+			}
+			//当存在的时候直接对端口进行请求，这样能防止二次请求而造成的code重复请求的问题
+			else{
+				$res = $this->http_curl($turl);
+				print_r($res);
+				$theOpenId = $res['openid'];
+				$theAccessToken = $res['access_token'];
+				$theTimeEnd = time()+7000;
+				$theRefreshToken = $res['refresh_token'];
+				$theScopt = $res['scope'];
+				$theCodeValues = $_Get['code'];
+				
+				//查看是否有该openid存在，如果不存在就将数据存到数据库中，如果存在就将数据更新
+				$getOpenIdSql = "select * from wp_wx_web_token where wx_openid = '$theOpenId'";
+				$getOpenIdSql_db = mysql_query($getOpenIdSql);
+				$getOpenIdSql_db_num = mysql_num_rows($getOpenIdSql_db);
+				echo "是否存在openid：". $getOpenIdSql_db_num."<br/>";
+				//当不存在时,进行储存
+				if(!$getOpenIdSql_db_num){
+					$addOpenIdSql = "insert into wp_wx_web_token (wx_token,wx_openid,wx_refresh_token,wx_time_end,wx_sope,wx_code) values ('$theAccessToken','$theOpenId','$theRefreshToken','$theTimeEnd','$theScopt','$theCodeValues')";
+					$addOpenIdSql_db = mysql_query($addOpenIdSql);
+					if($addOpenIdSql_db){
+						echo "获取用户token，openid插入成功";					
+					}
+				}
+				//当openid存在的时候，将数据进行更改
+				else{
+					$updateOpenIdSql = "update wp_wx_web_token set wx_token = '$theAccessToken',wx_refresh_token = '$theRefreshToken',wx_time_end = '$theTimeEnd',wx_sope = '$theScopt', wx_code= '$theCodeValues'";
+					
+					$updateOpenIdSql_db = mysql_query($updateOpenIdSql);
+					
+					if($updateOpenIdSql_db){
+						echo "openId更改成功";					
+					}
+					
+				}
+				//通过openId和用户access_token获取用户详细信息
+				
+				//获取用户详细信息的微信接口
+				$getDetaiUrl = "https://api.weixin.qq.com/sns/userinfo?access_token=".$theAccessToken."&openid=".$theOpenId."&lang=zh_CN";				
+				$userRes = $this->http_curl($getDetaiUrl);
+				echo "<hr/>";
+				print_r($userRes);
+				
+				//用户信息
+				$theNickName = $userRes['nickname'];
+				$theSex = $userRes['sex'];
+				$theProvince = $userRes['province'];
+				$theCity = $userRes['city'];
+				$theCountry = $userRes['country'];
+				$theHeadimgurl = $userRes['headimgurl'];
+				$thePrivilege = $userRes['privilege'];
+				
+				//将获取到的用户信息存入数据库
+				$updateUseInfoSql = "update wp_wx_web_token set wx_nickname = '$theNickName', wx_sex = '$theSex', wx_province = '$theProvince', wx_city = '$theCity', wx_country = '$theCountry', wx_headimgurl = '$theHeadimgurl', wx_privilege = '$thePrivilege'";
+				
+				$updateUseInfoSql_db = mysql_query($updateUseInfoSql);
+				
+				if($updateUseInfoSql_db){
+					echo "<br/><hr/>";
+					echo "用户信息更改成功";
+				}
+			}										
+		}
 	}
 	
 	
