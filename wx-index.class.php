@@ -830,6 +830,54 @@ class wxIndexClass{
 	}
 	
 	
+	//获取微信JSSDKD的jsapi_ticket的值
+	function get_jsapi_ticket(){
+		$theToken = $this->getWxAccessToken();
+		
+		$theTime = time();
+				
+		if($_SESSION['ticket'] && $_SESSION['endtime']>$theTime = time()){
+			$the_ticket = $_SESSION['ticket'];
+		}
+		else{
+			//获取微信jsapi_ticket的接口
+			$theJsapiUrl = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=".$theToken."&type=jsapi";
+			
+			//获取返回的字符串
+			$res = $this->http_curl($theJsapiUrl);
+			
+			//获取jsapi_ticket
+			$the_ticket = $res['ticket'];
+			
+			//将信息存储到session中
+			$_SESSION['ticket'] = $the_ticket;
+			$_SESSION['endtime'] = time()+7000;
+			
+		}	
+		return $the_ticket;		
+	}
+	
+	//获取微信JSSDKD的jsapi_ticket的值
+	
+	
+	function shareWx(){
+		//$csArray = array(
+		//	'name' =>'aaa',
+		//	'body' => array(
+		//		'header' =>'打手',
+		//		'footer' =>'打脚'
+		//	)
+		//);
+		
+		//$csJson = json_encode($csArray);
+		//print_r($csJson);		
+
+		$timestamp = time();
+		$theTicket = $this->get_jsapi_ticket();
+		print_r($theTicket);	
+		
+		
+	}
 	
 	
 	//function refreshToken(){
@@ -862,6 +910,9 @@ class wxIndexClass{
 		}
 		if($turl == "getUserDetailToken"){		
 			$this->getUserDetailToken();
+		}
+		if($turl == "shareWx"){
+			$this->shareWx();		
 		}
 	}
 	
