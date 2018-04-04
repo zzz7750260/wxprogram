@@ -857,8 +857,23 @@ class wxIndexClass{
 		return $the_ticket;		
 	}
 	
-	//获取微信JSSDKD的jsapi_ticket的值
+	//获取微信JSSDK随机号码
 	
+	function getRandNum($num){
+		$theArr = array(
+		'A','B','C','D','E','F','G','H','I','G','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9');
+		
+		$theMax = count($theArr);
+		//设置重复次数
+		$theStr = '';
+		for($i=0;$i<=$num;$i++){
+			$randNum = rand(0,$theMax-1);
+			$theStr.=$theArr[$randNum];		
+		}
+		//echo "============获取的随机数============<br/><hr/>";
+		//echo $theStr;
+		return $theStr;				
+	}	
 	
 	function shareWx(){
 		//$csArray = array(
@@ -871,12 +886,43 @@ class wxIndexClass{
 		
 		//$csJson = json_encode($csArray);
 		//print_r($csJson);		
-
+		
+		//由于生成的signature需要动态的url才能生成，因而需要从前端获取参数
+		$theUrlP = $_POST['pURL'];
+		
+		//$enUrl = urldecode($theUrlP);
+		//echo "<script>alert(".$theUrlP.");</script>";
+		//echo "<br/><hr/>";
+		
 		$timestamp = time();
+		
+		//获取jsapi_ticket
 		$theTicket = $this->get_jsapi_ticket();
-		print_r($theTicket);	
+		//print_r($theTicket);	
+		
+		//获取theNonceStr
+		$theNonceStr = $this->getRandNum(16);
+		//print_r($theNonceStr);
+		
+		//获取调用js的页面链接
+		$theUrl = $theUrlP;
+		
+		//获取signature
+		$theSignature = "jsapi_ticket=".$theTicket."&noncestr=".$theNonceStr."&timestamp=".$timestamp."&url=".$theUrlP."";
+		$shaSignature = sha1($theSignature);
 		
 		
+		//返回数据
+		$resArr = array(
+			'timestamp' => $timestamp,
+			'nonceStr' => $theNonceStr,
+			'signature' => $shaSignature,
+		);
+		
+		//返回json数据给前端
+		$resJson = json_encode($resArr);
+		
+		print_r($resJson);
 	}
 	
 	

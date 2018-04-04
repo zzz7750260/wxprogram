@@ -37,6 +37,10 @@
 	//根据参数来调用不同的功能
 	$theUrl = $_GET['turl'];
 	
+	if(!$theUrl){
+		$theUrl = $_POST['turl'];		
+	}
+	
 	$theActiveWx->returnFun($theUrl);
 	
 	
