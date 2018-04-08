@@ -1,4 +1,5 @@
 <?php 
+//session_start();
 //链接数据库服务器
 $conn = mysql_connect('localhost','root','');
 if($conn){
@@ -10,7 +11,7 @@ if($conn){
 	if($conn_db){
 	//	echo "数据库连接成功";		
 		header("Content-type: text/html; charset=utf-8");
-		mysql_query("set names utf8");
+		mysql_query("set names utf8");		
 	}
 	else{
 		//echo "数据库连接失败";

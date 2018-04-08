@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include("wx-database-conn.php");
 class wxIndexClass{
 		
@@ -632,6 +633,13 @@ class wxIndexClass{
 		//测试号的appID与appsecret
 		$appID = "wx5faec86adb79db26";
 		$appSecret = "17913645124aec3e59aefa3f41ba5a88";			
+
+		//由于获取code到获取access_token中需要进行一次跳转，因而需要将获取到的username存到session中
+		//获取用户信息,用于将用户信息已微信信息结合起来
+		$theUser = $_GET['username'];
+		$_SESSION['username'] = $theUser;
+		echo "index的session的user:".$_SESSION['username']."<br/><hr/>";
+	
 		
 		//跳转获取网页授权的access_token的链接设置
 		$getUrl = "http://23.234.10.120/wx/wx-index.php?turl=getUserDetailToken";
@@ -742,6 +750,8 @@ class wxIndexClass{
 		//测试号的appID与appsecret
 		$appID = "wx5faec86adb79db26";
 		$appSecret = "17913645124aec3e59aefa3f41ba5a88";
+		
+		
 
 		//获取token的微信接口
 		$turl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$appID."&secret=".$appSecret."&code=".$theCode."&grant_type=authorization_code";
@@ -808,6 +818,7 @@ class wxIndexClass{
 				print_r($userRes);
 				
 				//用户信息
+				$theOpenIdUser = $userRes['openid'];
 				$theNickName = $userRes['nickname'];
 				$theSex = $userRes['sex'];
 				$theProvince = $userRes['province'];
@@ -815,9 +826,14 @@ class wxIndexClass{
 				$theCountry = $userRes['country'];
 				$theHeadimgurl = $userRes['headimgurl'];
 				$thePrivilege = $userRes['privilege'];
+
+				//获取用户信息,用于将用户信息已微信信息结合起来
+				$theUser = $_SESSION['username'];
+				echo "index的class的user:".$theUser."<br/><hr/>";
+				
 				
 				//将获取到的用户信息存入数据库
-				$updateUseInfoSql = "update wp_wx_web_token set wx_nickname = '$theNickName', wx_sex = '$theSex', wx_province = '$theProvince', wx_city = '$theCity', wx_country = '$theCountry', wx_headimgurl = '$theHeadimgurl', wx_privilege = '$thePrivilege'";
+				$updateUseInfoSql = "update wp_wx_web_token set wx_nickname = '$theNickName', wx_sex = '$theSex', wx_province = '$theProvince', wx_city = '$theCity', wx_country = '$theCountry', wx_headimgurl = '$theHeadimgurl', wx_privilege = '$thePrivilege', web_username = '$theUser' where wx_openid = '$theOpenIdUser'";
 				
 				$updateUseInfoSql_db = mysql_query($updateUseInfoSql);
 				

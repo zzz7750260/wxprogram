@@ -25,12 +25,13 @@ function test(resolve,reject){
 
 var person1 = new Promise(function(resolve,reject){	
 	setTimeout(function(){
-		var word = 10;
+		var work = 3;
 		var sleep = 5;
-		var play = -10;
-		var study = Math.random()*0;
+		var play = 5;
+		var aim = 3;
+		var study = Math.random()*10;
 		
-		var value = word+sleep+play+study;
+		var value = work+sleep+play+study;
 		resolve(value)		
 	},1000)	
 })
@@ -39,12 +40,12 @@ var person1 = new Promise(function(resolve,reject){
 
 var person2 = new Promise(function(resolve,reject){
 	setTimeout(function(){
-		var word = 10;
+		var work = 3;
 		var sleep = 5;
-		var play = -10;
-		var study = Math.random()*100;
-		
-		var value = word+sleep+play+study;
+		var play = 3;
+		var aim = 20;
+		var study = Math.random()*100;		
+		var value = work+sleep+play+study;
 		resolve(value)		
 	},1000)	
 })
