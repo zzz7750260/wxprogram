@@ -42,8 +42,8 @@
 	}
 	
 	//获取传递过来的用户信息
-	$theUser = $_SESSION['username'];
-	echo "index的user:".$theUser."<br/><hr/>";
+	//$theUser = $_SESSION['username'];
+	//echo "index的user:".$theUser."<br/><hr/>";
 	
 	$theActiveWx->returnFun($theUrl);
 	

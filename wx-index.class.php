@@ -71,10 +71,16 @@ class wxIndexClass{
 			//	$theInfo = $this->get_reponse_msg('news');
 			//	return $theInfo;
 			//}
-			else{				
-				$theInfo = $this->get_reponse_msg('text');
-				return $theInfo;				
-				
+			else{		
+				//当传入的词为流量查询时，优先查询
+				//if(trim($postObj->Content)=='流量查询'){
+				//	$theInfo = $this->setWebDataMb($postObj->FromUserName);
+				//	return $theInfo;				
+				//}
+				//else{
+					$theInfo = $this->get_reponse_msg('text');
+					return $theInfo;						
+				//}									
 			}
 		}
 		
@@ -111,7 +117,13 @@ class wxIndexClass{
 					break;
 				case '美国服务器':
 					$content = '我们美国服务器有配置一，配置二等多种配置,你可以点击<a href="http://www.hostspaces.net/usa/">更多</a>了解我们服务器的相关资源';
-					break;				
+					break;		
+				//当传入的词为流量查询时，优先查询
+				case '流量查询':{
+					$info = $this->setWebDataMb($toUser);
+					$content = $info;
+					break;					
+				}
 				default:
 					//$content = '没有相关的查询';
 					//到数据库中查询
@@ -564,6 +576,87 @@ class wxIndexClass{
 	}
 	
 	
+	//设置流量返回模板
+	function setWebDataMb($theOpenId){
+		//获取access_token
+		$theToken = $this->getWxAccessToken();
+		
+		//$strXxArray =implode("",$theToken); 
+		file_put_contents("theToken.txt",$theToken);
+		
+		file_put_contents("openID.txt",$theOpenId);
+						
+		//获取关联的数据返回
+		//以下这两种数据库查询都可以
+		$theDataSql = "select a.*, b.* from wp_wx_web_token as a join wp_web_data as b where a.web_username = b.the_username and a.wx_openid = '$theOpenId'";
+		
+		$theDataSql_db = mysql_query($theDataSql);
+		
+		$theDataSqlArray = array();
+		
+		while($theDataSql_db_array = mysql_fetch_assoc($theDataSql_db)){
+			$theDataSqlArray = $theDataSql_db_array;			
+		}
+		print_r($theDataSqlArray);
+		
+		//组合成需要的微信的post数据组
+		$MbArray = array(
+			'touser'=>''.$theOpenId.'',
+			'template_id'=>'MM9ZKA8cJzPuc9Hn4XlBfukbMvVn0NUu_l-JaHPfOb8',
+			'url'=>'http://www.hostspaces.net',
+			'data'=>array(
+				'name'=>array(
+					'value'=>$theDataSqlArray['web_username'],
+					'color'=>'#ff0000'
+				),
+				'data'=>array(
+					'value'=>$theDataSqlArray['the_data'],
+					'color'=>'#ff0000'
+				),
+				'ddos'=>array(
+					'value'=>$theDataSqlArray['the_ddos'],
+					'color'=>'#ff0000'
+				),
+				'cc'=>array(
+					'value'=>$theDataSqlArray['the_cc'],
+					'color'=>'#ff0000'
+				),		
+				'utc'=>array(
+					'value'=>$theDataSqlArray['the_utc'],
+					'color'=>'#ff0000'
+				),	
+				'ttime'=>array(
+					'value'=>date('Y-m-d H:i:s'),
+					'color'=>'#ff0000'
+				)	
+			)
+		);	
+
+		//将array变成json数据进行提交
+		$MbJson = json_encode($MbArray);
+		
+		print_r($MbJson);
+		
+		//设置微信模板提交请求接口
+		$mbUrl = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".$theToken;
+		
+		//将数据进行post提交
+		$res = $this->http_curl($mbUrl,'post','json',$MbJson);
+		print_r($res);
+		
+		$strXxArray =implode("",$res); 
+		file_put_contents("resarraycontent.txt",$strXxArray);
+		
+		if(!$res['errcode']){
+			$info = "查询成功";
+		}
+		else{
+			$info = "查询失败";
+		}
+		return $info;
+	}
+		
+	
 	//获取页面授权
 	function getUserWebCode(){
 		//获取微信的AppID
@@ -975,6 +1068,9 @@ class wxIndexClass{
 		}
 		if($turl == "shareWx"){
 			$this->shareWx();		
+		}
+		if($turl == "setWebDataMb"){
+			$this->setWebDataMb('oLWCs0cYXR3JpvPifMNcqUJBoXWI');			
 		}
 	}
 	
