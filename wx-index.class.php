@@ -1041,6 +1041,118 @@ class wxIndexClass{
 		
 	//}
 	
+	
+	//利用phpqrcode生成二维码
+	//有图片生成
+	function createErweima($theUrl){
+		require_once 'phpqrcode.php';
+		$value = $theUrl; //获取需要生成二维码的地址;
+		$errorCorrectionLevel = 'L';    //容错级别   
+		$matrixPointSize = 5;           //生成图片大小
+		define('_ROOT_',dirname(_FILE_).'/'); //定义当前文件的根目录
+		//生成二维码图片
+		$filename = _ROOT_.'/img/'.microtime().'.png'; 
+		QRcode::png($value,$filename , $errorCorrectionLevel, $matrixPointSize, 2);    
+		
+		$theName = 'f'.microtime();
+    
+		$QR = $filename;                //已经生成的原始二维码图片文件     
+		$QR = imagecreatefromstring(file_get_contents($QR));    
+    
+		//输出图片    
+		imagepng($QR, './img/qrcode.png');    
+		imagedestroy($QR);  
+		return '<img src="./img/qrcode.png" alt="使用微信扫描支付">';     
+	}
+	
+	//无图片生成
+	function scerweimaWt($url=''){  
+		require_once 'phpqrcode.php';  
+		  
+		$value = $url;                  //二维码内容  
+		$errorCorrectionLevel = 'L';    //容错级别   
+		$matrixPointSize = 5;           //生成图片大小    
+		//生成二维码图片  
+		ob_start();
+		QRcode::png($value,false,$errorCorrectionLevel, $matrixPointSize, 2);  
+		$data =ob_get_contents();
+		ob_end_clean();
+		return "data:image/jpeg;base64,".base64_encode($data);
+	}  
+	
+	//利用微信生成临时二维码
+	function createTemporaryErweima(){
+		//获取生成临时二维码的ticket
+		$theToken = $this->getWxAccessToken();
+		print_r($theToken);
+		echo "<br/><hr/>";
+		//设置调用获取临时ticket的接口
+		$theUrl = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=".$theToken;
+		//设置post的数据
+		
+		$postArray = array(
+			"expire_seconds" => 604800,
+			"action_name" => "QR_SCENE",
+			"action_info" => array(
+				"scene" => array(
+					"scene_id" => 2000
+				)
+			)
+		);
+		
+		$postJson = json_encode($postArray);
+		print_r($postJson);
+		echo "<br/><hr/>";
+		
+		//curl提交post请求,获取ticket
+		$res = $this->http_curl($theUrl,'post','json',$postJson);
+		print_r($res);		
+		
+		$theTicket = $res['ticket'];
+		
+		//对ticket进行urlEncode转码
+		$enTheTicket = urlencode($theTicket);
+		//通过ticket获取二维码(返回为一个图片值)
+		$erweiUrl = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=".$enTheTicket;
+		echo '<img src="'.$erweiUrl.'">';
+	}
+	
+	//利用微信生成永久二维码
+	function createForevenErweima(){
+		//获取生成临时二维码的ticket
+		$theToken = $this->getWxAccessToken();
+		print_r($theToken);
+		echo "<br/><hr/>";
+		//设置调用获取临时ticket的接口
+		$theUrl = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=".$theToken;
+		//设置post的数据
+		
+		$postArray = array(
+			"action_name" => "QR_LIMIT_SCENE",
+			"action_info" => array(
+				"scene" => array(
+					"scene_id" => 3000
+				)
+			)
+		);
+
+		$postJson = json_encode($postArray);
+		print_r($postJson);
+		echo "<br/><hr/>";
+		
+		//curl提交post请求,获取ticket
+		$res = $this->http_curl($theUrl,'post','json',$postJson);
+		print_r($res);		
+		
+		$theTicket = $res['ticket'];
+		
+		//对ticket进行urlEncode转码
+		$enTheTicket = urlencode($theTicket);
+		//通过ticket获取二维码(返回为一个图片值)
+		$erweiUrl = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=".$enTheTicket;
+		echo '<img src="'.$erweiUrl.'">';		
+	}
+	
 	function returnFun($turl){
 		if($turl =="definedItem"){
 			$this->definedItem();			
@@ -1071,6 +1183,15 @@ class wxIndexClass{
 		}
 		if($turl == "setWebDataMb"){
 			$this->setWebDataMb('oLWCs0cYXR3JpvPifMNcqUJBoXWI');			
+		}
+		if($turl == "scerweimaWt"){
+			$this->scerweimaWt("http://23.234.10.120/wx/index.php?utl=151135&udad=1651661");
+		}
+		if($turl == "createTemporaryErweima"){
+			$this->createTemporaryErweima();
+		}
+		if($turl == "createForevenErweima"){
+			$this->createForevenErweima();
 		}
 	}
 	

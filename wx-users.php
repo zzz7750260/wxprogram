@@ -1,5 +1,6 @@
 <?php 
 include('wx-database-conn.php');
+include('wx-index.class.php');
 $theUsername = $_GET['username'];
 $theUserNameSql = "select * from wp_web_users where the_username = '$theUsername'";
 $theUserNameSql_db = mysql_query($theUserNameSql);
@@ -31,10 +32,15 @@ foreach($userArray as $key => $value){
 $theEWUrl = "http://23.234.10.120/wx/wx-index.php?turl=getUserDetailCode&username=".$userArray['the_username'];
 
 //需要对url进行转码
-$enTheEWUrl = urlencode($theEWUrl);
+//$enTheEWUrl = urlencode($theEWUrl);
 
-echo $enTheEWUrl;
+//$theTable .='<tr><td><img src="http://pan.baidu.com/share/qrcode?w=250&h=250&url='.$enTheEWUrl.'"></td><td></td></tr></table>';
 
-$theTable .='<tr><td><img src="http://pan.baidu.com/share/qrcode?w=250&h=250&url='.$enTheEWUrl.'"></td><td></td></tr></table>';
+//echo $enTheEWUrl;
+
+$theUse = new wxIndexClass();
+
+$theTable .='<tr><td>'.$theUse->createErweima($theEWUrl).'</td><td></td></tr></table>';
 
 echo $theTable;
+

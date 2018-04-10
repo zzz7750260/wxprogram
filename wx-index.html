@@ -10,6 +10,8 @@
   <body>
     <h1>你好，世界！</h1>
 
+	<button onclick="show()">获取图片</button><br/><hr/>
+	<button onclick="scan()">调用扫一扫</button>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 	
   </body>
@@ -59,6 +61,8 @@
 					jsApiList: [
 						'onMenuShareAppMessage',
 						'onMenuShareTimeline',
+						'chooseImage',
+						'scanQRCode',
 					] // 必填，需要使用的JS接口列表
 				});				
 				
@@ -81,10 +85,10 @@
 						// 用户取消分享后执行的回调函数
 							alert("分享失败");
 						}
-					});					
+					});	
 																					
-				});	
-												
+				});
+															
 			}
 		}
 		
@@ -100,8 +104,28 @@
 	theHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	theHttp.send("pURL="+enUrl);
 		
-
-  
-  
+	//用于获取图片的微信jssdk接口
+	function show(){
+		wx.chooseImage({
+			count: 9, // 默认9
+			sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+			sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+			success: function (res) {
+			var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+			}
+		});				
+	}
+	
+	//用于调用微信的扫一扫的接口
+	function scan(){
+		wx.scanQRCode({
+			needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+			scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+			success: function (res) {
+			var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+			}
+		});
+	}
+	
 </script>
 </html>
