@@ -673,7 +673,7 @@ class wxIndexClass{
 		$theToken = $this->getWxAccessToken();
 		
 		//这个链接主要是跳转获取到微信网页授权的access_token的链接
-		$getUrl = "http://23.234.10.120/wx/wx-index.php?turl=getUserWebToken";
+		$getUrl = "http://23.234.10.120/wordpress/wx/wx-index.php?turl=getUserWebToken";
 		
 		//根据要求对$getUrl进行urlEncode转码
 		$enUrl = urlencode($getUrl);
@@ -735,7 +735,7 @@ class wxIndexClass{
 	
 		
 		//跳转获取网页授权的access_token的链接设置
-		$getUrl = "http://23.234.10.120/wx/wx-index.php?turl=getUserDetailToken";
+		$getUrl = "http://23.234.10.120/wordpress/wx/wx-index.php?turl=getUserDetailToken";
 		
 		//根据微信公众号的请求对url进行urlencode的扫码
 		$enUrl = urlencode($getUrl);
@@ -1185,7 +1185,7 @@ class wxIndexClass{
 			$this->setWebDataMb('oLWCs0cYXR3JpvPifMNcqUJBoXWI');			
 		}
 		if($turl == "scerweimaWt"){
-			$this->scerweimaWt("http://23.234.10.120/wx/index.php?utl=151135&udad=1651661");
+			$this->scerweimaWt("http://23.234.10.120/wordpress/wx/index.php?utl=151135&udad=1651661");
 		}
 		if($turl == "createTemporaryErweima"){
 			$this->createTemporaryErweima();

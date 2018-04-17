@@ -25,7 +25,7 @@ function test(resolve,reject){
 
 var person1 = new Promise(function(resolve,reject){	
 	setTimeout(function(){
-		var work = 3;
+		var work = Math.random()*20;
 		var sleep = 5;
 		var play = 5;
 		var aim = 3;
@@ -40,7 +40,7 @@ var person1 = new Promise(function(resolve,reject){
 
 var person2 = new Promise(function(resolve,reject){
 	setTimeout(function(){
-		var work = 3;
+		var work = Math.random()*20;
 		var sleep = 5;
 		var play = 3;
 		var aim = 20;
